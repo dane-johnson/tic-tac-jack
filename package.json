@@ -1,0 +1,20 @@
+{
+  "name": "tic-tac-jack",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js",
+    "build": "webpack"
+  },
+  "dependencies": {
+    "express": "^4.15.3",
+    "jquery": "^3.2.1",
+    "lodash": "^4.17.4",
+    "mulberry": "dev",
+    "socket.io": "^2.0.3"
+  },
+  "devDependencies": {
+    "webpack": "^3.3.0"
+  }
+}
