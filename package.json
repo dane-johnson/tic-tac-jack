@@ -11,8 +11,7 @@
     "express": "^4.15.3",
     "jquery": "^3.2.1",
     "lodash": "^4.17.4",
-    "mulberry": "dev",
-    "socket.io": "^2.0.3"
+    "mulberry": "dev"
   },
   "devDependencies": {
     "webpack": "^3.3.0"
