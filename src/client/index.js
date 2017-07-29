@@ -2,8 +2,6 @@ const $ = require('jquery')
 const _ = require('lodash')
 const conn = require('mulberry-client').connect()
 
-conn.emit('init')
-
 function drawBoard () {
   gamestate = conn.gamestate()
   var board = $('.board')
