@@ -12,7 +12,6 @@ function drawBoard () {
       button = $('<button>' + i + '</button>')
         .on('click', function() {
           conn.emit('play', i)
-          console.log('I played position ' + i)
         })
     } else {
       button = $('<button>' + gamestate.board[i] + '</button>')

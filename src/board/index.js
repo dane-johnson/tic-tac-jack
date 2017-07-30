@@ -2,6 +2,8 @@ const $ = require('jquery')
 const _ = require('lodash')
 const conn = require('mulberry-client').connect()
 
+$('.turn').text("It's X's turn!")
+
 function drawBoard() {
   gamestate = conn.gamestate()
   var $board = $('.board')
@@ -16,11 +18,16 @@ function drawBoard() {
   $board.html(str)
 }
 
+function updateTurn (shape) {
+  $('.turn').text("It's " + shape + "'s turn!")
+}
+
+updateTurn('X')
+
 drawBoard()
 
 function update(gamestate) {
-  console.log("update")
-  console.log(gamestate)
+  updateTurn(gamestate.turn)
   drawBoard(gamestate.board)
 }
 

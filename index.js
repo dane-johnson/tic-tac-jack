@@ -5,15 +5,20 @@ var board = _.range(9).map(function () {
   return ''
 })
 
+var turn = 'X'
+
 function place (shape, pos) {
   board[pos] = shape
-  ms.updateAll({board: board})
+  turn = (turn === 'X') ? 'O' : 'X'
+  ms.updateAll({board: board, turn: turn})
 }
 
 const actions = {
   'play': function(player, pos) {
     console.log('%s pressed %d', player.state.shape, pos)
-    place(player.state.shape, pos)
+    if (player.state.shape === turn) {
+      place(player.state.shape, pos)
+    }
   },
   'init': function(player) {
     player.state.shape = (ms.players.indexOf(player) == 0) ? 'X' : 'O'
