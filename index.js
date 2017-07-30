@@ -1,9 +1,14 @@
 const ms = require('mulberry-server')
 const _ = require('lodash')
 
-var board = _.range(9).map(function () {
-  return ''
-})
+var board
+
+function initBoard() {
+  board = _.range(9).map(function () {
+    return ''
+  })
+}
+initBoard()
 
 var turn = 'X'
 
@@ -18,6 +23,13 @@ const actions = {
     console.log('%s pressed %d', player.state.shape, pos)
     if (player.state.shape === turn) {
       place(player.state.shape, pos)
+    }
+  },
+  'reset': function(player) {
+    if (!_.includes(board, '')) {
+      initBoard()
+      turn = 'X'
+      ms.reset()
     }
   },
   'init': function(player) {

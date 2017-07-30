@@ -28,7 +28,13 @@ drawBoard()
 
 function update(gamestate) {
   updateTurn(gamestate.turn)
-  drawBoard(gamestate.board)
+  drawBoard()
 }
 
-conn.register(update)
+function reset() {
+  updateTurn('X')
+  drawBoard()
+}
+
+conn.onUpdate(update)
+conn.onReset(reset)

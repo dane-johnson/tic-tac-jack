@@ -2,6 +2,10 @@ const $ = require('jquery')
 const _ = require('lodash')
 const conn = require('mulberry-client').connect()
 
+$('button').on('click', function() {
+  conn.emit('reset')
+})
+
 function drawBoard () {
   gamestate = conn.gamestate()
   var board = $('.board')
@@ -26,7 +30,7 @@ function drawBoard () {
 
 drawBoard()
 
-conn.register(function(data) {
+conn.onUpdate(function(data) {
   if(_.has(data, 'shape')) {
     $('.shape').text("Your shape is " + data.shape)
   }
@@ -35,3 +39,6 @@ conn.register(function(data) {
   }
 })
 
+conn.onReset(function() {
+  drawBoard()
+})

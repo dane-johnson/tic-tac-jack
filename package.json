@@ -9,6 +9,8 @@
   },
   "dependencies": {
     "express": "^4.15.3",
+    "global": "^4.3.2",
+    "heroku-cli": "^6.13.5",
     "jquery": "^3.2.1",
     "lodash": "^4.17.4",
     "mulberry": "dev"
