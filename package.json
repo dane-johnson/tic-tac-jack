@@ -12,9 +12,7 @@
     "express": "^4.15.3",
     "jquery": "^3.2.1",
     "lodash": "^4.17.4",
-    "mulberry": "^1.0.0"
-  },
-  "devDependencies": {
+    "mulberry": "^1.0.0",
     "webpack": "^3.3.0"
   }
 }
